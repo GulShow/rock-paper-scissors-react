@@ -4,8 +4,7 @@ import StartScreen from "./components/StartScreen/StartScreen";
 import PlayGround from "./components/PlayGround/PlayGround";
 // import {io} from "./server";
 import {io} from "socket.io-client";
-// @ts-ignore
-import * as game from "/socket.io/socket.io.js";
+
 
 
 const SERVER_URL = 'http://localhost:3001/'
@@ -41,7 +40,9 @@ function App() {
     const [enemyScorePoints, setEnemyScorePoints] = useState(0);
     const [winMessage, setWinMessage] = useState('');
 
-
+const connect = () => {
+    io(SERVER_URL)
+}
 
 
 
@@ -152,7 +153,6 @@ function App() {
         setWinningMessage(message);
     })
 
-    // @ts-ignore
     socket.on("player-1-wins", ({myChoice, enemyChoice}) => {
         if(playerId === 1){
             let message = "You choose " + myChoice + " and the enemy choose " + enemyChoice + " . So you win!";
@@ -287,6 +287,7 @@ function App() {
                                        winMessage={winMessage}
 
             />}
+            <button onClick={connect}>Connect</button>
         </div>
     );
 }

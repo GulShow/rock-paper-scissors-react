@@ -9,7 +9,7 @@ const server = http.createServer(app);
 
 app.use(express.static(path.join(__dirname, "public")));
 
-export const io = socketio(server);
+const io = socketio(server);
 
 const {userConnected, connectedUsers, initializeChoices, moves, makeMove, choices} = require("./utils/users");
 const {createRoom, joinRoom, exitRoom, rooms} = require("./utils/rooms");
