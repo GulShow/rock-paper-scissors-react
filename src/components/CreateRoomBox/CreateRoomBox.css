@@ -1,0 +1,37 @@
+
+.create-room-box {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.create-room-box input {
+    width: 80%;
+    height: 35px;
+    border: 1px solid #333;
+    outline: none;
+    padding: 5px;
+    margin: 0;
+}
+
+.create-room-box button {
+    width: 20%;
+    margin: 0;
+    height: 35px;
+    background: #189116;
+    color: white;
+    outline: none;
+    border: none;
+}
+
+.create-room-box .cancel-action {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    background: #ccc;
+    color: #333;
+}
+
+.cancel-action:hover {
+    background: #ddd !important;
+}

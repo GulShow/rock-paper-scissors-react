@@ -1,0 +1,10 @@
+.gameplay-choices button {
+    padding: 5px 25px;
+    background: #189116;
+    color: white;
+    outline: none;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 25px;
+}

@@ -1,0 +1,48 @@
+.join-with-id {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.join-with-id input {
+    width: 80%;
+    height: 35px;
+    border: 1px solid #333;
+    outline: none;
+    padding: 5px;
+    margin: 0;
+}
+
+.join-with-id button {
+    width: 20%;
+    margin: 0;
+    height: 35px;
+    background: #189116;
+    color: white;
+    outline: none;
+    border: none;
+}
+
+.join-with-id .cancel-action {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    background: #ccc;
+    color: #333;
+}
+
+.cancel-action:hover {
+    background: #ddd !important;
+}
+
+.join-room-box .join-random {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    height: 35px;
+    background: #189116;
+    color: white;
+    outline: none;
+    border: none;
+    margin-top: 30px;
+}

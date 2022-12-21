@@ -1,0 +1,22 @@
+.choices {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .7s ease-in;
+}
+
+.choice {
+    font-size: 5rem;
+    margin-right: 40px;
+}
+
+.choice:last-child {
+    margin-right: 0;
+}
+
+.choice:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+}

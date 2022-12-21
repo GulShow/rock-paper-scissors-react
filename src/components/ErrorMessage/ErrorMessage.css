@@ -1,0 +1,14 @@
+.error-message {
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 40px;
+    display: none;
+    background: rgb(209, 61, 61);
+    color: white;
+    padding: 20px;
+}
+
+.error-message p {
+    text-align: center;
+    font-size: 1.1rem;
+}

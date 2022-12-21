@@ -1,0 +1,77 @@
+.wait-message {
+    width: 600px;
+    padding-top: 30px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.wait-message p {
+    text-align: center;
+}
+
+.connected-players {
+    width: 500px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.connected-players .player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.connected-players .player .dot {
+    width: 10px;
+    height: 10px;
+    background: red;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.connected-players .player .connected {
+    background: green;
+}
+
+.connected-players .player:first-child {
+    margin-right: 30px;
+}
+
+.score {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.score>span {
+    font-weight: bold;
+    background: #123456;
+    color: white;
+    padding: 10px;
+}
+
+.score span#score {
+    font-weight: normal;
+}
+
+.score>span:first-child {
+    margin-bottom: 20px;
+}
+
+.message-after-choice-selection {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+.message-after-choice-selection p {
+    text-align: center;
+    font-size: 1.2rem;
+}
