@@ -2,15 +2,17 @@ import React, {useEffect, useRef, useState} from 'react';
 import './App.css';
 import StartScreen from "./components/StartScreen/StartScreen";
 import PlayGround from "./components/PlayGround/PlayGround";
+
 // import {io} from "./server";
 import {io} from "socket.io-client";
 
 
 
-const SERVER_URL = 'http://localhost:3001/'
+const SERVER_URL = 'http://localhost:3001/';
 
 
-const socket = io(SERVER_URL);
+
+const socket = io(SERVER_URL)
 
 
 
@@ -40,9 +42,9 @@ function App() {
     const [enemyScorePoints, setEnemyScorePoints] = useState(0);
     const [winMessage, setWinMessage] = useState('');
 
-const connect = () => {
-    io(SERVER_URL)
-}
+// const connect = () => {
+//     io(SERVER_URL)
+// }
 
 
 
@@ -55,7 +57,7 @@ const connect = () => {
 
 
     const createRoom = () => {
-        setErrorState(false)
+        setErrorState(false);
         socket.emit("create-room", roomId);
     }
 
@@ -152,6 +154,7 @@ const connect = () => {
     socket.on("draw", (message:string) => {
         setWinningMessage(message);
     })
+
 
     socket.on("player-1-wins", ({myChoice, enemyChoice}) => {
         if(playerId === 1){
@@ -287,7 +290,7 @@ const connect = () => {
                                        winMessage={winMessage}
 
             />}
-            <button onClick={connect}>Connect</button>
+            {/*<button onClick={connect}>Connect</button>*/}
         </div>
     );
 }
