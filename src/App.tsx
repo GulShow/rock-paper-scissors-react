@@ -156,6 +156,7 @@ function App() {
     })
 
 
+
     socket.on("player-1-wins", ({myChoice, enemyChoice}) => {
         if(playerId === 1){
             let message = "You choose " + myChoice + " and the enemy choose " + enemyChoice + " . So you win!";
@@ -168,7 +169,7 @@ function App() {
         }
     })
 
-    // @ts-ignore
+
     socket.on("player-2-wins", ({myChoice, enemyChoice}) => {
         if(playerId === 2){
             let message = "You choose " + myChoice + " and the enemy choose " + enemyChoice + " . So you win!";
