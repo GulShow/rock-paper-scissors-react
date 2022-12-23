@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 import './GameplayChoices.css';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 interface IGameplayChoices {
     rock: boolean,
@@ -24,21 +25,22 @@ const GameplayChoices:FC<IGameplayChoices> = ({rock,
              style={{color: rock ? 'green' : ' black' }}
              onClick={rockChosen}
         >
-          <i className="fas fa-hand-rock"></i>
+
+            <FontAwesomeIcon icon={['fas', 'hand-rock']} />
         </div>
 
         <div className="choice" id="paper"
              style={{color: paper ? 'green' : ' black' }}
              onClick={paperChosen}
         >
-          <i className="fas fa-hand-paper"></i>
+            <FontAwesomeIcon icon={['fas', 'hand-paper']} />
         </div>
 
         <div className="choice" id="scissor"
              style={{color: scissors ? 'green' : ' black' }}
              onClick={scissorsChosen}
         >
-          <i className="fas fa-hand-scissors"></i>
+            <FontAwesomeIcon icon={['fas', 'hand-scissors']} />
         </div>
       </div>
 </div>

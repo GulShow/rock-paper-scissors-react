@@ -3,17 +3,17 @@ import './App.css';
 import StartScreen from "./components/StartScreen/StartScreen";
 import PlayGround from "./components/PlayGround/PlayGround";
 
-// import {io} from "./server";
+
 import {io} from "socket.io-client";
+import Modal from "./components/Modal/Modal";
+import UserName from "./components/UserName/UserName";
 
 
-
-const SERVER_URL = 'http://localhost:3001/';
-
+const SERVER_URL = 'http://localhost:3000';
 
 
 const socket = io(SERVER_URL)
-
+export const key = 'username'
 
 
 
@@ -41,10 +41,10 @@ function App() {
     const [myScorePoints, setMyScorePoints] = useState(0);
     const [enemyScorePoints, setEnemyScorePoints] = useState(0);
     const [winMessage, setWinMessage] = useState('');
+    const [active, setActive] = useState(true);
+    const [userName, setUserName] = useState('');
+    localStorage.setItem(key, userName);
 
-// const connect = () => {
-//     io(SERVER_URL)
-// }
 
 
 
@@ -58,6 +58,8 @@ function App() {
 
     const createRoom = () => {
         setErrorState(false);
+        console.log('done');
+
         socket.emit("create-room", roomId);
     }
 
@@ -291,7 +293,8 @@ function App() {
                                        winMessage={winMessage}
 
             />}
-            {/*<button onClick={connect}>Connect</button>*/}
+            <UserName/>
+            <Modal active={active} setActive={setActive} userName={userName} setUserName={setUserName}/>
         </div>
     );
 }

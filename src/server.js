@@ -1,23 +1,16 @@
-// const express = require("express");
-// const http = require("http");
-// const path = require("path");
-// const socketio = require("socket.io");
-//
-// const app = express();
-//
-// const server = http.createServer(app);
-//
-// app.use(express.static(path.join(__dirname, "public")));
-//
-// const io = socketio(server);
+const express = require("express");
+const http = require("http");
+const path = require("path");
+const socketio = require("socket.io");
 
-
-
-const express = require('express');
 const app = express();
-const http = require('http');
+
 const server = http.createServer(app);
-const io = require('socket.io', 'net')(http);
+
+app.use(express.static(path.join(__dirname, "src")));
+
+const io = socketio(server);
+
 
 const {userConnected, connectedUsers, initializeChoices, moves, makeMove, choices} = require("./utils/users");
 const {createRoom, joinRoom, exitRoom, rooms} = require("./utils/rooms");
@@ -146,4 +139,6 @@ io.on("connection", socket => {
     })
 })
 
-server.listen(3001, () => console.log("Server started on port 3000..."));
+
+
+server.listen(3000, () => console.log("Server started on port 3000..."));
