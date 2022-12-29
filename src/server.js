@@ -7,9 +7,12 @@ const app = express();
 
 const server = http.createServer(app);
 
-app.use(express.static(path.join(__dirname, "src")));
+// app.use(express.static(path.join(__dirname, "src")));
 
 const io = socketio(server);
+
+
+
 
 
 const {userConnected, connectedUsers, initializeChoices, moves, makeMove, choices} = require("./utils/users");
@@ -139,6 +142,5 @@ io.on("connection", socket => {
     })
 })
 
-
-
 server.listen(3000, () => console.log("Server started on port 3000..."));
+

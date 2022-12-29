@@ -19,7 +19,8 @@ interface IStartScreen{
     errorState: boolean,
     joinRoom: () => void,
     joinRandomRoom: () => void,
-    errorMessage: string
+    errorMessage: string,
+    children: React.ReactNode
 }
 
 
@@ -35,7 +36,8 @@ const StartScreen:FC<IStartScreen> = ({toggle,
                                           errorState,
                                           joinRoom,
                                           joinRandomRoom,
-                                          errorMessage
+                                          errorMessage,
+    children
 }) => {
     // const obj = useContext<IStartScreen>(AppContext);
 
@@ -53,11 +55,13 @@ const StartScreen:FC<IStartScreen> = ({toggle,
 
             {choices && <GameChoices toggle={toggle} toggleJoin={toggleJoin}/>}
 
-            {createRoomBox && <CreateRoomBox toggle={toggle}
-                                             roomId = {roomId}
-                                             setRoomId={setRoomId}
-                                             createRoom={createRoom}
-            />}
+            {createRoomBox && children}
+
+            {/*{createRoomBox && <CreateRoomBox toggle={toggle}*/}
+            {/*                                 roomId = {roomId}*/}
+            {/*                                 setRoomId={setRoomId}*/}
+            {/*                                 createRoom={createRoom}*/}
+            {/*/>}*/}
 
             {joinRoomBox && <JoinRoomBox toggleJoin={toggleJoin}
                                          roomId={roomId}

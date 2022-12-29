@@ -1,14 +1,14 @@
-const rooms = {};
+export const rooms = {};
 
-const createRoom = (roomId, player1Id) => {
+export const createRoom = (roomId, player1Id) => {
     rooms[roomId] = [player1Id, ""];
 }
 
-const joinRoom = (roomId, player2Id) => {
+export const joinRoom = (roomId, player2Id) => {
     rooms[roomId][1] = player2Id;
 }
 
-const exitRoom = (roomId, player) => {
+export const exitRoom = (roomId, player) => {
     if(player === 1){
         delete rooms[roomId];
     }else{
@@ -16,4 +16,4 @@ const exitRoom = (roomId, player) => {
     }
 }
 
-module.exports = {rooms, createRoom, joinRoom, exitRoom};
+// module.exports = {rooms, createRoom, joinRoom, exitRoom};

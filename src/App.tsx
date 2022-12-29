@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import StartScreen from "./components/StartScreen/StartScreen";
 import PlayGround from "./components/PlayGround/PlayGround";
@@ -12,8 +12,8 @@ import UserName from "./components/UserName/UserName";
 const SERVER_URL = 'http://localhost:3000';
 
 
-const socket = io(SERVER_URL)
-export const key = 'username'
+const socket = io(SERVER_URL);
+export const key = 'username';
 
 
 
@@ -60,7 +60,7 @@ function App() {
         setErrorState(false);
         console.log('done');
 
-        socket.emit("create-room", roomId);
+         socket.emit("create-room", roomId);
     }
 
     const toggleJoin = () => {
@@ -262,7 +262,6 @@ function App() {
     }
 
     return (
-
         <div className="App">
             { startScreen && <StartScreen toggle={toggle}
                          choices={choices}
@@ -276,7 +275,14 @@ function App() {
                          joinRoom={joinRoom}
                          joinRandomRoom={joinRandomRoom}
                          errorMessage={errorMessage}
-            />}
+            >
+                <div className="create-room-box" id="create-room-box">
+                    <input type="text" id="room-id" value={roomId} onChange={e => setRoomId(e.target.value)}/>
+                    <button id="create-room-btn" onClick={createRoom}>Create</button>
+
+                    <button id="cancel-create-action" className="cancel-action" onClick={toggle}>Cancel</button>
+                </div>
+            </StartScreen>}
             {playground && <PlayGround rock={rock}
                                        paper={paper}
                                        scissors={scissors}

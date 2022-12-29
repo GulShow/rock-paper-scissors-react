@@ -5,6 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "../src/fontawesome"
 
+import { io } from "socket.io-client";
+
+const socket = io("http://localhost:4000");
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
